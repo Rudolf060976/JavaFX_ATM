@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="641.0" prefWidth="897.0" stylesheets="@../styles/ATM_Config.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyecto2_atm.FXML_ATMConfigController">
+   <left>
+      <Pane prefHeight="484.0" prefWidth="387.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#daedff" height="418.0" layoutX="14.0" layoutY="6.0" stroke="#638bee" strokeType="INSIDE" strokeWidth="2.0" width="358.0" />
+            <Text layoutX="28.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ATM Configuration Settings">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <GridPane gridLinesVisible="true" layoutX="28.0" layoutY="56.0" prefHeight="343.0" prefWidth="321.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="185.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="112.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Out of Service">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Admin PIN No." GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Allow Deposits" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <RadioButton fx:id="radioALLOWDEPNO" mnemonicParsing="false" selected="true" text="No">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="DEPOSITS" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="radioALLOWDEPYES" mnemonicParsing="false" text="Yes" toggleGroup="$DEPOSITS" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <RadioButton fx:id="radioALLOWWITHNO" mnemonicParsing="false" selected="true" text="No">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="WITH" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="radioALLOWWITHYES" mnemonicParsing="false" text="Yes" toggleGroup="$WITH" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <RadioButton fx:id="radioSHOWCLKNO" mnemonicParsing="false" text="No">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="CLOCK" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="radioSHOWCLKYES" mnemonicParsing="false" selected="true" text="Yes" toggleGroup="$CLOCK" />
+                     </children>
+                  </HBox>
+                  <Label text="Allow Withdrawals" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Show Clock" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Max Amount Withdrawals" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Max Amount Deposits" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Segoe UI Black" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="txtADMINPIN" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="chkOUTOFSERVICE" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <TextField fx:id="txtMAXAMOUNTWITH" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtMAXAMOUNTDEP" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </left>
+   <top>
+      <Pane prefHeight="70.0" prefWidth="897.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="395.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ATM Simulator" textAlignment="CENTER">
+               <font>
+                  <Font name="Lato Black" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#daedff" height="418.0" layoutX="13.0" layoutY="7.0" stroke="#638bee" strokeType="INSIDE" strokeWidth="2.0" width="447.0" />
+            <Text layoutX="57.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency Available" wrappingWidth="196.3515625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnIN" layoutX="55.0" layoutY="298.0" mnemonicParsing="false" onAction="#handlebtnINAction" prefHeight="31.0" prefWidth="87.0" text="IN" />
+            <Button fx:id="btnOUT" layoutX="155.0" layoutY="298.0" mnemonicParsing="false" onAction="#handlebtnOUTAction" prefHeight="31.0" prefWidth="87.0" text="OUT" />
+            <TableView fx:id="tblCURRENCY" layoutX="55.0" layoutY="64.0" prefHeight="200.0" prefWidth="306.0">
+              <columns>
+                <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colIDDENOMINATION" prefWidth="75.0" text="idDENOMINATION" />
+                <TableColumn fx:id="colAMOUNT" prefWidth="75.0" text="Currency" />
+                <TableColumn fx:id="colQUANTITY" prefWidth="75.0" text="Quantity" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+   <bottom>
+      <Pane prefHeight="96.0" prefWidth="897.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnEXIT" layoutX="783.0" layoutY="17.0" mnemonicParsing="false" onAction="#handlebtnEXITAction" prefHeight="53.0" prefWidth="87.0" text="Exit" />
+            <Button fx:id="btnAPPLY" layoutX="688.0" layoutY="17.0" mnemonicParsing="false" onAction="#handlebtnAPPLYAction" prefHeight="53.0" prefWidth="87.0" text="Apply" />
+            <Button fx:id="btnLAUNCH" layoutX="593.0" layoutY="17.0" mnemonicParsing="false" onAction="#handlebtnLAUNCHAction" prefHeight="53.0" prefWidth="87.0" text="Launch ATM" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>
