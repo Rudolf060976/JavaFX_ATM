@@ -26,6 +26,12 @@ import com.mycompany.proyecto2_atm.services.Actualizaciones;
 import com.mycompany.proyecto2_atm.services.Conexion;
 import com.mycompany.proyecto2_atm.services.Consultas;
 import com.mycompany.proyecto2_atm.services.Dialogs;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 
 /**
  * FXML Controller class
@@ -91,10 +97,9 @@ public class FXML_ATMConfigController implements Initializable {
 
     @FXML
     void handlebtnEXITAction(ActionEvent event) {
-
+                     
         javafx.application.Platform.exit();
-        
-        
+               
     }
 
     @FXML
@@ -103,8 +108,30 @@ public class FXML_ATMConfigController implements Initializable {
     }
 
     @FXML
-    void handlebtnLAUNCHAction(ActionEvent event) {
+    void handlebtnLAUNCHAction(ActionEvent event)  {
 
+        try{
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/FXML_ATM.fxml"));
+        
+        Parent root = loader.load();
+        
+        Scene myScene = new Scene(root);
+        
+        Stage myStage = new Stage();
+        
+        myStage.setScene(myScene);
+        
+        myStage.show();
+        
+        }catch(IOException ex) {
+        
+        
+        
+        }
+        
+        
+        
     }
 
     @FXML
@@ -153,7 +180,7 @@ public class FXML_ATMConfigController implements Initializable {
       
         LoadConfigSettings(atmconf);
                 
-        
+       
     }    
     
     private ObservableList<atm_currency_status> getAtmCurrencies() {

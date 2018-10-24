@@ -162,60 +162,6 @@
                   </Text>
                </children>
             </StackPane>
-            <Pane fx:id="paneRECEIPT" layoutX="21.0" layoutY="132.0">
-               <children>
-                  <ImageView fx:id="imgvTICKET" fitHeight="300.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../Images/ATM%20RECEIPT.jpg" />
-                     </image>
-                  </ImageView>
-                  <Text fx:id="txtReceiptCardNumber" layoutX="96.0" layoutY="150.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="1234 5678 1234 5678" textAlignment="RIGHT" wrappingWidth="86.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptCustomerName" layoutX="97.0" layoutY="171.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="FULANO DE TAL" textAlignment="RIGHT" wrappingWidth="86.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptDispensedAmount" layoutX="112.0" layoutY="192.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="\$200.00" textAlignment="RIGHT" wrappingWidth="71.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptRequestedAmount" layoutX="113.0" layoutY="203.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="\$200.00" textAlignment="RIGHT" wrappingWidth="71.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptAcountType" layoutX="112.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENT" textAlignment="RIGHT" wrappingWidth="71.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptTerminalFee" layoutX="112.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1.25" textAlignment="RIGHT" wrappingWidth="71.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptTotalAmount" layoutX="112.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$201.25" textAlignment="RIGHT" wrappingWidth="71.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptBalance" layoutX="112.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1,250.75" textAlignment="RIGHT" wrappingWidth="71.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="txtReceiptDate" layoutX="96.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10-7-2018  13:56" textAlignment="RIGHT" wrappingWidth="86.13671875">
-                     <font>
-                        <Font name="Arial Narrow" size="10.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
          </children></Pane>
    </right>
    <bottom>
@@ -316,7 +262,7 @@
             <StackPane layoutX="309.0" layoutY="3.0" prefHeight="36.0" prefWidth="286.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4c4f51" height="30.0" stroke="BLACK" strokeType="INSIDE" width="272.0" />
-                  <Text fill="#38ee00" strokeType="OUTSIDE" strokeWidth="0.0" text="------   C   A   S   H   ------" textAlignment="CENTER" wrappingWidth="232.298828125" StackPane.alignment="CENTER">
+                  <Text fx:id="txtCASH" fill="#38ee00" strokeType="OUTSIDE" strokeWidth="0.0" text="------   C   A   S   H   ------" textAlignment="CENTER" wrappingWidth="232.298828125" StackPane.alignment="CENTER">
                      <font>
                         <Font name="Lato Black" size="18.0" />
                      </font>
@@ -363,6 +309,60 @@
                   <Font name="Segoe UI Semibold" size="12.0" />
                </font>
             </Button>
+            <Pane fx:id="paneRECEIPT" layoutX="111.0" layoutY="-65.0">
+               <children>
+                  <ImageView fx:id="imgvTICKET" fitHeight="300.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../Images/ATM%20RECEIPT.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="txtReceiptCardNumber" layoutX="96.0" layoutY="150.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="1234 5678 1234 5678" textAlignment="RIGHT" wrappingWidth="86.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptCustomerName" layoutX="97.0" layoutY="171.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="FULANO DE TAL" textAlignment="RIGHT" wrappingWidth="86.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptDispensedAmount" layoutX="112.0" layoutY="192.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="\$200.00" textAlignment="RIGHT" wrappingWidth="71.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptRequestedAmount" layoutX="113.0" layoutY="203.64453125" strokeType="OUTSIDE" strokeWidth="0.0" text="\$200.00" textAlignment="RIGHT" wrappingWidth="71.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptAcountType" layoutX="112.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENT" textAlignment="RIGHT" wrappingWidth="71.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptTerminalFee" layoutX="112.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1.25" textAlignment="RIGHT" wrappingWidth="71.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptTotalAmount" layoutX="112.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$201.25" textAlignment="RIGHT" wrappingWidth="71.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptBalance" layoutX="112.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$1,250.75" textAlignment="RIGHT" wrappingWidth="71.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="txtReceiptDate" layoutX="96.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10-7-2018  13:56" textAlignment="RIGHT" wrappingWidth="86.13671875">
+                     <font>
+                        <Font name="Arial Narrow" size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </bottom>

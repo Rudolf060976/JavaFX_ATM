@@ -6,14 +6,20 @@
 package com.mycompany.proyecto2_atm;
 
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import javafx.animation.FillTransition;
+import javafx.animation.ParallelTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.AudioClip;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 /**
  *
@@ -65,6 +71,8 @@ public class FXML_ATMController implements Initializable {
     private Text txtRECEIPT;
     @FXML
     private Text txtATMCARD;
+    @FXML
+    private Text txtCASH;
     @FXML
     private Pane paneRECEIPT;
     @FXML
@@ -236,7 +244,93 @@ public class FXML_ATMController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        Setinitialstatuscontrols();
+        
+        Init_ATM();
+        
+        
     }    
+    
+    
+    
+    
+    
+    private void Init_ATM() {
+    
+        Thread thd = new Thread(()-> {
+        
+             AudioClip snd = new AudioClip(Paths.get("src/main/resources/Sounds/ATM_INIT.mp3").toUri().toString());
+                                
+             snd.play();
+          
+        
+        });
+        
+        
+        FillTransition fillINIT = new FillTransition(new Duration(3000),txtTITULO2);
+       
+        fillINIT.setFromValue(Color.web("#141414"));
+        fillINIT.setToValue(Color.web("#2EF220"));
+        fillINIT.setCycleCount(8);
+        fillINIT.setAutoReverse(true);
+        
+        
+        FillTransition fillCASH = new FillTransition(new Duration(3000),txtCASH);
+        
+        fillCASH.setFromValue(Color.web("#141414"));
+        fillCASH.setToValue(Color.web("#2EF220"));
+        fillCASH.setCycleCount(8);
+        fillCASH.setAutoReverse(true);
+        
+        FillTransition fillRECEIPT = new FillTransition(new Duration(3000),txtRECEIPT);
+        
+        fillRECEIPT.setFromValue(Color.web("#141414"));
+        fillRECEIPT.setToValue(Color.web("#2EF220"));
+        fillRECEIPT.setCycleCount(8);
+        fillRECEIPT.setAutoReverse(true);
+        
+        FillTransition fillATMCARD = new FillTransition(new Duration(3000),txtATMCARD);
+        
+        fillATMCARD.setFromValue(Color.web("#141414"));
+        fillATMCARD.setToValue(Color.web("#2EF220"));
+        fillATMCARD.setCycleCount(8);
+        fillATMCARD.setAutoReverse(true);
+        
+        ParallelTransition par = new ParallelTransition(fillINIT,fillCASH,fillRECEIPT,fillATMCARD);
+        
+        par.setRate(4);
+        
+        thd.start();
+        par.play();
+    
+    }
+    
+    private void Setinitialstatuscontrols() {
+    
+        txtTITULO1.setFill(Color.web("#141414"));
+        txtTITULO2.setFill(Color.web("#141414"));
+        txtTITULO3.setFill(Color.web("#141414"));
+        txtTITULO4.setFill(Color.web("#141414"));
+        
+        txtTITULO2.setText("I N I C I A L I Z A N D O");
+        
+        
+        txtOPCIONLEFT1.setFill(Color.web("#141414"));
+        txtOPCIONLEFT2.setFill(Color.web("#141414"));
+        txtOPCIONLEFT3.setFill(Color.web("#141414"));
+        txtOPCIONLEFT4.setFill(Color.web("#141414"));
+    
+        txtOPCIONRIGHT1.setFill(Color.web("#141414"));
+        txtOPCIONRIGHT2.setFill(Color.web("#141414"));
+        txtOPCIONRIGHT3.setFill(Color.web("#141414"));
+        txtOPCIONRIGHT4.setFill(Color.web("#141414"));
+        
+        paneRECEIPT.setVisible(false);
+        paneDEBITCARD.setVisible(false);
+        
+        
+    }
+         
     
 }
